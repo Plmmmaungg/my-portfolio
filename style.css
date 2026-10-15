@@ -1,0 +1,500 @@
+
+/* 1. Basic settings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --background: #ffffff;
+  --text: #202020;
+  --muted: #777777;
+  --accent: #b5b030;
+  --border: #e8e8e8;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* 2. Navigation bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 8%;
+  border-bottom: 1px solid var(--border);
+  background: var(--background);
+}
+
+.logo {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a,
+footer a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.3s;
+}
+
+nav a:hover,
+footer a:hover {
+  color: var(--accent);
+}
+
+/* 3. Home / hero section */
+.hero {
+  min-height: 75vh;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: center;
+  gap: 55px;
+  padding: 80px 12%;
+}
+
+.hero-content {
+  min-width: 0;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 5vw, 76px);
+  line-height: 1.15;
+  letter-spacing: -3px;
+  margin-bottom: 16px;
+  overflow-wrap: anywhere;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero h2 {
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 16px;
+}
+
+.intro,
+.description {
+  max-width: 570px;
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+/* NEW: Home profile photo */
+.hero-image {
+  position: relative;
+  max-width: 390px;
+  width: 100%;
+  justify-self: end;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 180px 180px 12px 12px;
+  background: #f5f1fa;
+  transition: transform 0.4s;
+}
+
+.hero-image img:hover {
+  transform: translateY(-5px);
+}
+
+.image-caption {
+  margin-top: 14px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* 4. Buttons */
+.button {
+  display: inline-block;
+  padding: 12px 22px;
+  background: var(--text);
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  border: 1px solid var(--text);
+  transition: 0.3s;
+}
+
+.button:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+/* 5. General sections */
+.section {
+  padding: 90px 12%;
+  border-top: 1px solid var(--border);
+}
+
+.section h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  letter-spacing: -1px;
+  line-height: 1.3;
+  margin-bottom: 22px;
+}
+
+.description {
+  line-height: 1.9;
+}
+
+/* NEW: About section image and text */
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #f5f1fa;
+}
+
+.about-content .description {
+  margin-bottom: 0;
+}
+
+/* 6. Interests and hobbies */
+.hobby-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin: 10px 0 55px;
+}
+
+.hobby-card {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.hobby-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.hobby-card img {
+  width: 100%;
+  height: px;
+  object-fit: cover;
+  background: #f5f1fa;
+}
+
+.hobby-card h3 {
+  font-size: 15px;
+  padding: 14px 14px 2px;
+}
+
+.hobby-card p {
+  color: var(--muted);
+  font-size: 12px;
+  padding: 0 14px 16px;
+}
+
+/* 7. Favorite drinks */
+.drink-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.drink-card {
+  border: 1px solid var(--border);
+  padding: 14px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.drink-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.drink-card img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  background: #f5f1fa;
+}
+
+.drink-card h3 {
+  margin: 15px 0 4px;
+  font-size: 18px;
+}
+
+.drink-card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* 8. Skills */
+.skills-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.skills-image img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #f5f1fa;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.skills span,
+.tag {
+  display: inline-block;
+  border: 1px solid var(--border);
+  padding: 8px 15px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* 9. Project cards */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.project-card {
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.project-image {
+  overflow: hidden;
+  background: #f5f1fa;
+}
+
+.project-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.04);
+}
+
+.project-content {
+  padding: 24px;
+}
+
+.project-number {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+}
+
+.project-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.project-card p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+.tag {
+  padding: 5px 10px;
+}
+
+/* 10. Contact section */
+.contact {
+  background: #faf9fc;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.contact-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #f5f1fa;
+}
+
+/* 11. Footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 25px 8%;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* 12. Mobile responsiveness */
+@media (max-width: 1000px) {
+  .hero {
+    padding: 70px 7%;
+    gap: 30px;
+  }
+
+  .section {
+    padding: 70px 7%;
+  }
+
+  .hobby-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-image img {
+    height: 380px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 5%;
+  }
+
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 60px 7%;
+    gap: 32px;
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 10vw, 55px);
+    letter-spacing: -1.5px;
+  }
+
+  .hero h2 {
+    font-size: 17px;
+  }
+
+  .hero-image {
+    max-width: 320px;
+    justify-self: center;
+  }
+
+  .hero-image img {
+    height: 370px;
+  }
+
+  .section {
+    padding: 60px 7%;
+  }
+
+  .about-grid,
+  .skills-layout,
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .about-image img,
+  .skills-image img {
+    height: 250px;
+  }
+
+  .hobby-grid,
+  .drink-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hobby-card img {
+    height: 230px;
+  }
+
+  .drink-card img {
+    height: 250px;
+  }
+
+  .project-image img {
+    height: 240px;
+  }
+
+  .contact-image img {
+    height: 200px;
+  }
+
+  footer {
+    flex-direction: column;
+    padding: 25px 7%;
+  }
+}
